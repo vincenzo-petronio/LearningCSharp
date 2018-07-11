@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "001_ConsoleApp", "001_Conso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "002_ConsoleAppNetCore", "002_ConsoleAppNetCore\002_ConsoleAppNetCore.csproj", "{104BBC21-6DC6-4983-B385-27E1C8858521}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "003_ConsoleReadQuotes", "003_ConsoleReadQuotes\003_ConsoleReadQuotes.csproj", "{137C5CFC-ABE9-46FE-8A91-E8B750E34BAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{104BBC21-6DC6-4983-B385-27E1C8858521}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{104BBC21-6DC6-4983-B385-27E1C8858521}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{104BBC21-6DC6-4983-B385-27E1C8858521}.Release|Any CPU.Build.0 = Release|Any CPU
+		{137C5CFC-ABE9-46FE-8A91-E8B750E34BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137C5CFC-ABE9-46FE-8A91-E8B750E34BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137C5CFC-ABE9-46FE-8A91-E8B750E34BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137C5CFC-ABE9-46FE-8A91-E8B750E34BAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
