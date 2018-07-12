@@ -9,6 +9,8 @@ namespace _006_Reflection
         /// </summary>
         public void Dispose()
         {
+            Console.WriteLine("Chiamata al Dispose()!!!");
+
             // Ha come compito principale quello di pulire le risorse
             // unmanaged, ma può pulire anche quelle managed (cioè sotto il diretto controllo del CLR).
             Dispose(true);
@@ -22,10 +24,12 @@ namespace _006_Reflection
         {
             if(disposeAll)
             {
+                Console.WriteLine("Dispose managed resources...");
                 // Managed
                 // ... release managed resources
             }
 
+            Console.WriteLine("Dispose unmanaged resources...");
             // Unmanaged
             // ... release resources, as DB connection
         }
@@ -38,7 +42,14 @@ namespace _006_Reflection
         /// </summary>
         ~MyDisposableClass()
         {
+            Console.WriteLine("Chiamata al Finalizzatore!!!");
             Dispose(false);
+        }
+
+
+        public void UseSomeResorces()
+        {
+            Console.WriteLine("UseSomeResorces...");
         }
         
     }

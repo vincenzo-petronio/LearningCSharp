@@ -47,6 +47,14 @@ namespace _006_Reflection
             Console.WriteLine($"bigInteger3.IsZero={valueMethodIsZero3}");
 
 
+            // Manage the object lyfecycle.
+            // Attraverso using forziamo la chiamata al metodo Dispose.
+            using (MyDisposableClass mdc = new MyDisposableClass())
+            {
+                mdc.UseSomeResorces();
+            }
+            
+
             BloccaConsole();
         }
 
