@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -83,8 +84,6 @@ namespace _007_Validation
                 //Contract.Requires<OperationException>(!conversionSuccessfull, "Conversione fallita!");
                 //Contract.EndContractBlock();
 
-                // Regex
-
 
                 error = false;
             }
@@ -144,6 +143,12 @@ namespace _007_Validation
                 Console.WriteLine($"Task {Thread.CurrentThread.Name} with ID #{Thread.CurrentThread.ManagedThreadId}");
                 ConvertInputAsTask(input);
             }));
+            taskList.Add(Task.Factory.StartNew(() =>
+            {
+                Console.WriteLine($"Task {Thread.CurrentThread.Name} with ID #{Thread.CurrentThread.ManagedThreadId}");
+                ValidateWithRegex(input);
+            }));
+
 
             try
             {
@@ -185,6 +190,7 @@ namespace _007_Validation
             }
             if (stringNumber.Length > 10)
             {
+
                 throw new ArgumentOutOfRangeException("numero troppo lungo!");
             }
 
@@ -218,18 +224,30 @@ namespace _007_Validation
             {
                 throw;
             }
-            //catch (ArgumentException)
-            //{
-            //    throw;
-            //}
-            //catch (FormatException)
-            //{
-            //    throw;
-            //}
-            //catch (OverflowException)
-            //{
-            //    throw;
-            //}
+        }
+
+        private static void ValidateWithRegex(string input)
+        {
+
+            // Ammessi solo digit
+            if (Regex.IsMatch(input, "^\\D*$"))
+            {
+                throw new ArgumentException("caratteri non ammessi dalla regex!");
+            }
+
+            try
+            {
+                // Più di 4 digit uguali consecutivi non ammessi
+                Match match = Regex.Match(input, "([0-9])\\1{4}");
+                if(match.Success)
+                {
+                    throw new OperationException("caratteri ripetuti non ammessi dalla regex!");
+                }
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }
