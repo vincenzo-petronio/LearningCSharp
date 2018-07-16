@@ -15,7 +15,11 @@ namespace _008_EncryptHash
 
 
             // Symmetric Encryption
-            CryptSimmetrico crypt = new CryptSimmetrico();
+            //CryptSimmetrico crypt = new CryptSimmetrico();
+
+
+            // Asymmetric Encryption
+            CryptAsimmetrico crypt = new CryptAsimmetrico();
 
 
             Utils.BloccaConsole();

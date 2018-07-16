@@ -18,7 +18,6 @@ namespace _008_EncryptHash
             Decrypt();
         }
 
-
         private void Encrypt()
         {
             Console.WriteLine("Digita una password:");
