@@ -5,11 +5,17 @@ using System.Text;
 
 namespace _008_EncryptHash
 {
+    /// <summary>
+    /// Crea un algoritmo simmetrico di crittografia, e utilizzando la password fornita
+    /// dall'utente sulla console esegue un crypt e descrypt di un file di testo.
+    /// Non sono gestite, per semplicità, Exception e Task.
+    /// </summary>
     class CryptSimmetrico
     {
         public CryptSimmetrico()
         {
             Encrypt();
+            Decrypt();
         }
 
 
@@ -19,6 +25,7 @@ namespace _008_EncryptHash
             string password = Console.ReadLine();
 
             Console.WriteLine("Encrypt START");
+
             // chiavi da usare nel metodo di crypt
             byte[] salt = new UnicodeEncoding().GetBytes("SALT");
             Rfc2898DeriveBytes rfc2898DeriveBytes = new Rfc2898DeriveBytes(password, salt);
@@ -33,7 +40,6 @@ namespace _008_EncryptHash
             // CryptoStream
             ICryptoTransform cryptoTransform = crypthAlgo.CreateEncryptor();
 
-
             // File Output
             var filePathOutput = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
@@ -43,13 +49,21 @@ namespace _008_EncryptHash
             // N.B. in questo modo posso dichiarare nested using
             using (FileStream fileStreamOutput = new FileStream(filePathOutput, FileMode.OpenOrCreate))
             using (CryptoStream cryptoStream = new CryptoStream(fileStreamOutput, cryptoTransform, CryptoStreamMode.Write))
+            using (StreamWriter fileStreamWriterOutput = new StreamWriter(cryptoStream))
             using (FileStream fileStreamInput = new FileStream("LoremIpsum.txt", FileMode.Open))
+            using (StreamReader fileStreamReaderInput = new StreamReader(fileStreamInput))
             {
-                int data;
-                while ((data = fileStreamInput.ReadByte()) != -1)
-                {
-                    cryptoStream.WriteByte((byte)data);
-                }
+                // A )
+                //int data;
+                //while ((data = fileStreamInput.ReadByte()) != -1)
+                //{
+                //    cryptoStream.WriteByte((byte)data);
+                //}
+
+
+                // B ) utilizzo StreamReader/StreamWriter
+                fileStreamWriterOutput.Write(fileStreamReaderInput.ReadToEnd());
+
             }
 
             Console.WriteLine("Encrypt END");
@@ -57,7 +71,41 @@ namespace _008_EncryptHash
 
         private void Decrypt()
         {
+            Console.WriteLine("Digita la password utilizzata per cifrare il testo:");
+            string password = Console.ReadLine();
 
+            Console.WriteLine("Decrypt START");
+
+            byte[] salt = new UnicodeEncoding().GetBytes("SALT");
+            Rfc2898DeriveBytes rfc2898DeriveBytes = new Rfc2898DeriveBytes(password, salt);
+
+            SymmetricAlgorithm crypthAlgo = new RijndaelManaged();
+            crypthAlgo.Key = rfc2898DeriveBytes.GetBytes(crypthAlgo.KeySize / 8);
+            crypthAlgo.IV = rfc2898DeriveBytes.GetBytes(crypthAlgo.BlockSize / 8);
+
+            ICryptoTransform cryptoTransform = crypthAlgo.CreateDecryptor();
+
+            // File Input / CipherText
+            var filePathInput = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                "CRYPT_SIMM"
+            );
+            // File Output / PlainText
+            var filePathOutput = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
+                "DECRYPT_SIMM"
+            );
+
+            using (FileStream fileStreamInput = new FileStream(filePathInput, FileMode.Open))
+            using (CryptoStream cryptoStream = new CryptoStream(fileStreamInput, cryptoTransform, CryptoStreamMode.Read))
+            using (StreamReader fileStreamReaderInput = new StreamReader(cryptoStream))
+            using (FileStream fileStreamOutput = new FileStream(filePathOutput, FileMode.Create))
+            using (StreamWriter fileStreamWriterOutput = new StreamWriter(fileStreamOutput))
+            {
+                fileStreamWriterOutput.Write(fileStreamReaderInput.ReadToEnd());
+            }
+
+            Console.WriteLine("Decrypt END");
         }
     }
 }
