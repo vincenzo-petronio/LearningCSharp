@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "008_EncryptHash", "008_Encr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "009_Bitmask", "009_Bitmask\009_Bitmask.csproj", "{F1766A22-EAE2-41E2-922F-89E1E69B213E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "010_LocalFunctions", "010_LocalFunctions\010_LocalFunctions.csproj", "{3ED333A2-EBDB-4D63-9F5F-75571542D23E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "010_LocalFunctions", "010_LocalFunctions\010_LocalFunctions.csproj", "{3ED333A2-EBDB-4D63-9F5F-75571542D23E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "011_Tuple", "011_Tuple\011_Tuple.csproj", "{401DA630-0E98-4BB0-B476-F0A37E509811}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{3ED333A2-EBDB-4D63-9F5F-75571542D23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3ED333A2-EBDB-4D63-9F5F-75571542D23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3ED333A2-EBDB-4D63-9F5F-75571542D23E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401DA630-0E98-4BB0-B476-F0A37E509811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401DA630-0E98-4BB0-B476-F0A37E509811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401DA630-0E98-4BB0-B476-F0A37E509811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401DA630-0E98-4BB0-B476-F0A37E509811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
