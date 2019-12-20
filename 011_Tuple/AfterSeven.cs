@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _011_Tuple
 {
@@ -36,6 +37,15 @@ namespace _011_Tuple
                 $"{username} " +
                 $"{identity} ")
                 ;
+
+
+            // E' possibile avere un foreach con index grazie alle tuple
+            var list = new List<string> { "a", "b", "c", "d", "e", "f" };
+            Console.WriteLine("[FOREACH WITH INDEX]");
+            foreach (var (item, index) in list.WithIndex())
+            {
+                Console.WriteLine($"{index} - {item}");
+            }
         }
 
         // TUPLE RETURN TYPE
