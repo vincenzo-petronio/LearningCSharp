@@ -1,0 +1,21 @@
+﻿<Window x:Class="_013_Task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Tasks" Height="350" Width="1000">
+    <Grid>
+        <StackPanel Margin="8" Orientation="Horizontal">
+            <Button Content="X" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="35" Click="Button_Click_Clear" />
+            <Button Content="Blocking UI" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Click="Button_Click_1" />
+            <Button Content="Task.Run" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Click="Button_Click_2" />
+            <Button Content="Task blocking" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Click="Button_Click_3"  />
+            <Button Content="Task async in parallel" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Click="Button_Click_4"  />
+            <Button Content="Task async in series" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Click="Button_Click_5"  />
+            <Button Content="Wait/Result/GetResult" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Click="Button_Click_6"  />
+            <Button Content="Deadlock!" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Click="Button_Click_7"  />
+        </StackPanel>
+        <ListView Height="246" x:Name="UI_Log" Margin="0,16,0,8" />
+    </Grid>
+</Window>

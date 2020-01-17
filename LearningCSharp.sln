@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "009_Bitmask", "009_Bitmask\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "010_LocalFunctions", "010_LocalFunctions\010_LocalFunctions.csproj", "{3ED333A2-EBDB-4D63-9F5F-75571542D23E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "011_Tuple", "011_Tuple\011_Tuple.csproj", "{401DA630-0E98-4BB0-B476-F0A37E509811}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "011_Tuple", "011_Tuple\011_Tuple.csproj", "{401DA630-0E98-4BB0-B476-F0A37E509811}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "012_Task", "012_Task\012_Task.csproj", "{31A333E1-2E5A-466F-B1CD-B6D5FD070C60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "013_Task", "013_Task\013_Task.csproj", "{7687C403-6B96-4BDF-AE7F-2D87EAC521C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,14 @@ Global
 		{401DA630-0E98-4BB0-B476-F0A37E509811}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{401DA630-0E98-4BB0-B476-F0A37E509811}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{401DA630-0E98-4BB0-B476-F0A37E509811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31A333E1-2E5A-466F-B1CD-B6D5FD070C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31A333E1-2E5A-466F-B1CD-B6D5FD070C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31A333E1-2E5A-466F-B1CD-B6D5FD070C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31A333E1-2E5A-466F-B1CD-B6D5FD070C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7687C403-6B96-4BDF-AE7F-2D87EAC521C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7687C403-6B96-4BDF-AE7F-2D87EAC521C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7687C403-6B96-4BDF-AE7F-2D87EAC521C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7687C403-6B96-4BDF-AE7F-2D87EAC521C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
