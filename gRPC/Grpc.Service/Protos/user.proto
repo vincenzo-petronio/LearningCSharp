@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto"; // Dates and times
+import "google/protobuf/wrappers.proto"; // nullable types
+
+option csharp_namespace = "Grpc.Service.Protos";
+
+package grpc;
+
+service IUser {
+	rpc GetUser (GetUserReq) returns (GetUserRes);
+	rpc GetUserDetails (GetUserReq) returns (GetUserDetailsRes);
+}
+
+message GetUserReq {
+	int32 id = 1;
+}
+
+message GetUserRes {
+	User user = 1;
+}
+
+message GetUserDetailsRes {
+	UserDetails userDetails = 1;
+}
+
+message User {
+	fixed64 id = 1;
+	string name = 2;
+	string surname = 3;
+	google.protobuf.Timestamp birthday = 4;
+}
+
+message UserLocation {
+	string address = 1;
+	string cap = 2;
+	string city = 3;
+}
+
+message UserContact {
+	string name = 1;
+	google.protobuf.BoolValue isPublic = 3; // bool?
+	enum ContactType {
+		UNKNOWN = 0;
+		EMAIL = 1;
+		PEC = 2;
+		ICQ = 3;
+		TELEPHONE_NUMBER = 4;
+	}
+	ContactType type = 4;
+}
+
+message UserDetails {
+	User user = 1;
+	UserLocation currentAddress = 2;
+	repeated UserContact contact = 3; // list of contact
+}
