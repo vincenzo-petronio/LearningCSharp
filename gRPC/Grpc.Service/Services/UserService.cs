@@ -1,7 +1,7 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Grpc.Service.DataAccess;
-using Grpc.Service.Protos;
+using LearnigCSharp.gRPC;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +25,6 @@ namespace Grpc.Service.Services
         #region [Impl IUser]
         public override Task<GetUserRes> GetUser(GetUserReq request, ServerCallContext context)
         {
-            //List<UserModel> listUm = await userRepo.GetUsersAsync();
             UserModel um = listUm.First(um => um.Id == request.Id);
 
             return Task.FromResult(new GetUserRes
@@ -58,8 +57,8 @@ namespace Grpc.Service.Services
                 Surname = um.Surname,
                 Birthday = Timestamp.FromDateTime(um.BirthDay)
             };
-            userDetails.Contact.Add(new UserContact { Name = um.Email, Type = UserContact.Types.ContactType.Email});
-            userDetails.Contact.Add(new UserContact { Name = um.Pec, Type = UserContact.Types.ContactType.Pec});
+            userDetails.Contact.Add(new UserContact { Name = um.Email, Type = UserContact.Types.ContactType.Email });
+            userDetails.Contact.Add(new UserContact { Name = um.Pec, Type = UserContact.Types.ContactType.Pec });
 
             return Task.FromResult(new GetUserDetailsRes
             {

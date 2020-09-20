@@ -3,9 +3,9 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto"; // Dates and times
 import "google/protobuf/wrappers.proto"; // nullable types
 
-option csharp_namespace = "Grpc.Service.Protos";
+option csharp_namespace = "LearnigCSharp.gRPC";
 
-package grpc;
+package users;
 
 service IUser {
 	rpc GetUser (GetUserReq) returns (GetUserRes);

@@ -48,7 +48,7 @@ namespace Grpc.Service.DataAccess
                     Id = i,
                     Name = AlphaRandom(8),
                     Surname = AlphaRandom(10),
-                    BirthDay = DateTime.Now.AddYears(-i),
+                    BirthDay = DateTime.Now.AddYears(-i).ToUniversalTime(),
                     CurrentAddress = AlphaRandom(15),
                     CurrentCap = NumericRandom(5),
                     CurrentCity = AlphaRandom(6),
