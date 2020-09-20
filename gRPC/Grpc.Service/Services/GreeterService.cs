@@ -1,5 +1,5 @@
 using Grpc.Core;
-using LearnigCSharp.gRPC;
+using LearnigCSharp.gRPC.v1;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 

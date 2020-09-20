@@ -1,6 +1,5 @@
 ﻿using Grpc.Net.Client;
-using Grpc.Service;
-using LearnigCSharp.gRPC;
+using LearnigCSharp.gRPC.v1;
 using System;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -11,7 +10,7 @@ namespace Grpc.Client
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello gRPC Client!!!");
+            Console.WriteLine("Hello .NET Core gRPC Client!!!");
 
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client1 = new Greeter.GreeterClient(channel);

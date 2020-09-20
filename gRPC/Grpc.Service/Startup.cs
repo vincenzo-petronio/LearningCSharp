@@ -18,7 +18,10 @@ namespace Grpc.Service
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddGrpc();
+            services.AddGrpc(options => {
+                options.EnableDetailedErrors = true;
+            });
+            services.AddHealthChecks();
 
             services.AddSingleton<IUserRepo, UserRepo>();
         }
@@ -42,6 +45,7 @@ namespace Grpc.Service
                 {
                     await context.Response.WriteAsync("Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
                 });
+                endpoints.MapHealthChecks("/HealthChecks");
             });
         }
     }

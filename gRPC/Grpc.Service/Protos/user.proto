@@ -3,7 +3,7 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto"; // Dates and times
 import "google/protobuf/wrappers.proto"; // nullable types
 
-option csharp_namespace = "LearnigCSharp.gRPC";
+option csharp_namespace = "LearnigCSharp.gRPC.v1";
 
 package users;
 

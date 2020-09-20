@@ -1,7 +1,7 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Grpc.Service.DataAccess;
-using LearnigCSharp.gRPC;
+using LearnigCSharp.gRPC.v1;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
