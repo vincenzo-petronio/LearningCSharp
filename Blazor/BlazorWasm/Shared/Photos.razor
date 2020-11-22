@@ -1,0 +1,15 @@
+﻿@using BlazorWasm.Data
+
+<div class="card col-4 p-3 border-primary">
+    <div class="card-title text-success">
+        Photos
+    </div>
+    <div class="card-body">
+        <div>
+            <label>Id: @PhotoDto.Id</label>
+            <label>Title: @PhotoDto.Title</label>
+            <hr />
+            <img src="@PhotoDto.ThumbImageUrl" />
+        </div>
+    </div>
+</div>
