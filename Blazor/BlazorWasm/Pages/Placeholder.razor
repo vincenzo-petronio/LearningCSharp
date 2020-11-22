@@ -4,6 +4,8 @@
 @inject JsonPlaceholderHttpClient httpClient
 
 <h3>Placeholder</h3>
+<button class="btn btn-primary" @onclick="OnPhotoButtonClicked">Photo</button>
+<hr />
 
 @if (@photoDto != null)
 {
@@ -14,25 +16,21 @@
 
     private PhotoDto photoDto;
 
-    protected override async Task OnInitializedAsync()
+    protected override Task OnInitializedAsync()
+    {
+        return Task.CompletedTask;
+    }
+
+    private async void OnPhotoButtonClicked()
     {
         int randomId = (new Random()).Next(0, 5000);
         var response = await httpClient.GetPhoto(randomId);
-
         photoDto = new PhotoDto
         {
             Id = response.Id,
             Title = response.Title,
             ThumbImageUrl = response.ThumbnailUrl
-
         };
-
-        //photoDto = new PhotoDto
-        //{
-        //    Id = 2,
-        //    Title = "reprehenderit est deserunt velit ipsam",
-        //    ThumbImageUrl = "https://via.placeholder.com/150/771796"
-        //};
     }
 
 }
