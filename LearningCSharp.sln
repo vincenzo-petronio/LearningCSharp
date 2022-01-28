@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30413.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "001_ConsoleApp", "001_ConsoleApp\001_ConsoleApp.csproj", "{931F6DC7-20A0-4D75-BACE-84CFE88D0FF7}"
 EndProject
@@ -49,7 +49,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "014_CSharp9", "014_CSharp9\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blazor", "Blazor", "{00A5C071-A41E-44EE-8524-9EE6C942EC42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasm", "Blazor\BlazorWasm\BlazorWasm.csproj", "{069DA71F-FCAD-41B7-BD3E-E81C09FAE0FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWasm", "Blazor\BlazorWasm\BlazorWasm.csproj", "{069DA71F-FCAD-41B7-BD3E-E81C09FAE0FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
