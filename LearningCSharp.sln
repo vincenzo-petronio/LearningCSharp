@@ -53,7 +53,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWasm", "Blazor\Blazor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoC", "IoC", "{4CD85FB8-840A-444A-A2F2-C2B093E8E4BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoughInversionOfControl", "RoughInversionOfControl\RoughInversionOfControl.csproj", "{96A3451F-FF77-4621-BF1F-ABCB5D228367}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoughInversionOfControl", "RoughInversionOfControl\RoughInversionOfControl.csproj", "{96A3451F-FF77-4621-BF1F-ABCB5D228367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "015_OOP", "015_OOP\015_OOP.csproj", "{D9C8BA87-9D39-4AC0-AFD3-AA8069E5DCCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,6 +151,10 @@ Global
 		{96A3451F-FF77-4621-BF1F-ABCB5D228367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96A3451F-FF77-4621-BF1F-ABCB5D228367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96A3451F-FF77-4621-BF1F-ABCB5D228367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9C8BA87-9D39-4AC0-AFD3-AA8069E5DCCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C8BA87-9D39-4AC0-AFD3-AA8069E5DCCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9C8BA87-9D39-4AC0-AFD3-AA8069E5DCCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9C8BA87-9D39-4AC0-AFD3-AA8069E5DCCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
